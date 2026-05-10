@@ -1,0 +1,19 @@
+{
+  "name": "press-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build -w @pressapp/shared && npm run build -w @pressapp/api && npm run build -w @pressapp/web",
+    "test": "npm run test -w @pressapp/api",
+    "typecheck": "npm run typecheck -w @pressapp/shared && npm run typecheck -w @pressapp/api && npm run typecheck -w @pressapp/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
